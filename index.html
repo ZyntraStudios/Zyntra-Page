@@ -1,1 +1,222 @@
-<h1>Github page test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zyntra Studios</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #161616;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Matrix canvas */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background: rgba(5,5,5,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0,255,170,0.1);
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    color: #00ffaa;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 140px 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    max-width: 600px;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #00ffaa;
+    letter-spacing: 2px;
+}
+
+.card {
+    border: 1px solid rgba(0,255,170,0.2);
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    background: rgba(0,255,170,0.02);
+}
+
+.card:hover {
+    border-color: #00ffaa;
+    box-shadow: 0 0 20px rgba(0,255,170,0.2);
+    transform: translateY(-4px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(0,255,170,0.1);
+    color: #777;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+<a href="#home">HOME</a>
+<a href="#projects">PROJECTS</a>
+<a href="#about">ABOUT</a>
+<a href="#labs">LABS</a>
+<a href="#social">SOCIAL</a>
+</nav>
+
+<section id="home">
+<h1 id="mainTitle"></h1>
+<p class="subtitle">
+Core infrastructure of an independent cybersecurity and advanced systems studio.
+</p>
+</section>
+
+<section id="projects">
+<h2>PROJECTS</h2>
+<div class="card">
+<strong>Zyntra Security</strong><br>
+Advanced defensive infrastructure and digital threat analysis.
+</div>
+<div class="card">
+<strong>Zyntra AI Systems</strong><br>
+Custom intelligence architectures and automated analysis tools.
+</div>
+</section>
+
+<section id="about">
+<h2>ABOUT</h2>
+<p>
+Zyntra Studios is the central research and development core behind multiple cybersecurity and AI-driven products.  
+Focused on innovation, resilience and offensive-defensive system design.
+</p>
+</section>
+
+<section id="labs">
+<h2>LABS</h2>
+<div class="card">Zero-day research simulations</div>
+<div class="card">Autonomous defensive agents</div>
+<div class="card">Experimental cryptographic systems</div>
+</section>
+
+<section id="social">
+<h2>SOCIAL</h2>
+<p>GitHub | LinkedIn | Contact</p>
+</section>
+
+<footer>
+© 2026 Zyntra Studios — Core Systems Division
+</footer>
+
+<script>
+// MATRIX EFFECT
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for(let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
+
+function draw() {
+    ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ffaa";
+    ctx.font = fontSize + "px monospace";
+
+    for(let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 35);
+
+// Title reveal effect
+const titleText = "ZYNTRA STUDIOS";
+let index = 0;
+const title = document.getElementById("mainTitle");
+
+function revealTitle() {
+    if(index < titleText.length) {
+        title.innerHTML += titleText[index];
+        index++;
+        setTimeout(revealTitle, 80);
+    }
+}
+
+revealTitle();
+</script>
+
+</body>
+</html>
