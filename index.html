@@ -100,12 +100,15 @@ h2 {
     transform: translateY(-4px);
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    border-top: 1px solid rgba(0,255,170,0.1);
-    color: #777;
-    font-size: 12px;
+/* Mantener estilo de tarjeta para enlaces */
+.card-link {
+    text-decoration: none; /* quita el subrayado */
+    color: inherit;        /* mantiene el color original de la tarjeta */
+    display: block;        /* que ocupe todo el ancho como bloque */
+}
+
+.card-link .card:hover {
+    cursor: pointer;       /* muestra el cursor de “mano” */
 }
 
 /* Enlaces sociales */
@@ -123,6 +126,14 @@ footer {
 .social-links {
     font-size: 1rem;
     letter-spacing: 1px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(0,255,170,0.1);
+    color: #777;
+    font-size: 12px;
 }
 </style>
 </head>
@@ -147,14 +158,21 @@ Independent cybersecurity developing.
 
 <section id="projects">
 <h2>PROJECTS</h2>
-<div class="card">
-<strong>Zyntra Security</strong><br>
-Advanced defensive infrastructure and digital threat analysis.
-</div>
-<div class="card">
-<strong>Studyboost.ai</strong><br>
-AI designed for students to summarize and study in a short amount of time.
-</div>
+
+<a href="https://github.com/ZyntraSecurity" target="_blank" class="card-link">
+  <div class="card">
+    <strong>Zyntra Security</strong><br>
+    Advanced defensive infrastructure and digital threat analysis.
+  </div>
+</a>
+
+<a href="https://studyboost.ai" target="_blank" class="card-link">
+  <div class="card">
+    <strong>Studyboost.ai</strong><br>
+    AI designed for students to summarize and study in a short amount of time.
+  </div>
+</a>
+
 </section>
 
 <section id="about">
