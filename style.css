@@ -1,137 +1,181 @@
+/* RESET */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    font-size:18px;
 }
 
 body{
-background:#0b0b0b;
-color:white;
-font-family:'Orbitron',sans-serif;
-overflow-x:hidden;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Orbitron', sans-serif;
+    overflow-x:hidden;
 }
 
+/* MATRIX */
 canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
 }
 
+/* NAVBAR */
 nav{
-position:fixed;
-width:100%;
-padding:20px 60px;
-display:flex;
-justify-content:center;
-gap:50px;
-background:rgba(0,0,0,0.85);
-border-bottom:1px solid rgba(0,255,170,0.15);
-z-index:10;
+    position:fixed;
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(0,255,170,0.15);
+    z-index:10;
 }
 
 nav a{
-color:#00ffaa;
-text-decoration:none;
-letter-spacing:2px;
+    text-decoration:none;
+    color:#00ffaa;
+    font-size:16px;
+    letter-spacing:2px;
+    transition:0.3s;
 }
 
+nav a:hover{
+    color:white;
+}
+
+/* SECTIONS */
 section{
-min-height:100vh;
-padding:140px 12%;
-display:flex;
-flex-direction:column;
-justify-content:center;
+    min-height:100vh;
+    padding:140px 12%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
+h1{
+    font-size:4.5rem;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    color:#aaa;
+    max-width:500px;
+    font-size:1.2rem;
+}
+
+h2{
+    color:#00ffaa;
+    margin-bottom:30px;
+    letter-spacing:2px;
+    font-size:2rem;
+}
+
+/* HOME LAYOUT */
 .home-container{
-display:flex;
-justify-content:space-between;
-gap:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:60px;
 }
 
+/* ROADMAP PANEL */
 .roadmap-panel{
-width:320px;
-background:#000;
-border:2px solid #00ffaa;
-border-radius:20px;
-padding:25px;
+    width:340px;
+    background:#000;
+    border:2px solid #00ffaa;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 20px rgba(0,255,170,0.15);
+}
+
+.roadmap-panel h3{
+    color:#00ffaa;
+    margin-bottom:20px;
+    font-size:1rem;
+    letter-spacing:2px;
 }
 
 .quest{
-padding:8px 0;
-font-size:0.85rem;
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid rgba(0,255,170,0.15);
+    font-size:0.9rem;
 }
 
-.quest.completed{color:#00ffaa;}
-.quest.progress{color:#ffc800;}
-.quest.paused{color:#ff4d4d;}
-
-.card{
-display:block;
-border:1px solid rgba(0,255,170,0.2);
-padding:25px;
-margin-bottom:20px;
-background:rgba(0,255,170,0.03);
-text-decoration:none;
-color:inherit;
-transition:0.3s;
-}
-
-.card:hover{
-border-color:#00ffaa;
-box-shadow:0 0 20px rgba(0,255,170,0.2);
-transform:translateY(-4px);
-}
-
-.card-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:10px;
+.quest:last-child{
+    border-bottom:none;
 }
 
 .status{
-font-size:0.7rem;
-padding:4px 10px;
-border-radius:20px;
-font-weight:bold;
+    font-weight:bold;
 }
 
 .status.research{
-color:#ffc800;
-border:1px solid #ffc800;
-background:rgba(255,200,0,0.15);
+    color:#ffc800;
 }
 
 .status.paused{
-color:#ff4d4d;
-border:1px solid #ff4d4d;
-background:rgba(255,0,0,0.15);
-
-html {
-    font-size: 18px;
+    color:#ff4d4d;
 }
 
-h1 {
-    font-size: 4.5rem;
-    letter-spacing: 4px;
+/* CARDS */
+.card{
+    display:block;
+    border:1px solid rgba(0,255,170,0.2);
+    padding:25px;
+    margin-bottom:20px;
+    background:rgba(0,255,170,0.03);
+    text-decoration:none;
+    color:inherit;
+    transition:0.3s;
+    font-size:1rem;
 }
 
-.subtitle {
-    font-size: 1.2rem;
+.card:hover{
+    border-color:#00ffaa;
+    box-shadow:0 0 20px rgba(0,255,170,0.2);
+    transform:translateY(-4px);
 }
 
-h2 {
-    font-size: 2rem;
+/* SOCIAL */
+.social-links a{
+    color:#00ffaa;
+    text-decoration:none;
+    transition:0.3s;
 }
 
-nav a {
-    font-size: 16px;
+.social-links a:hover{
+    color:white;
+    text-shadow:0 0 8px #00ffaa;
 }
 
-.card {
-    font-size: 1rem;
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(0,255,170,0.1);
+    color:#777;
+    font-size:12px;
 }
 
+/* RESPONSIVE */
+@media(max-width:1000px){
+    .home-container{
+        flex-direction:column;
+    }
+
+    .roadmap-panel{
+        width:100%;
+        margin-top:40px;
+    }
 }
