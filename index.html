@@ -86,16 +86,16 @@ h2 {
     letter-spacing: 2px;
 }
 
-/* Tarjetas de proyectos y links */
+/* Cards */
 .card {
-    display: block;          /* para que todo el enlace sea clicable */
+    display: block;
     border: 1px solid rgba(0,255,170,0.2);
     padding: 25px;
     margin-bottom: 20px;
     transition: 0.3s;
     background: rgba(0,255,170,0.02);
-    text-decoration: none;   /* quita subrayado de enlace */
-    color: inherit;          /* mantiene color original */
+    text-decoration: none;
+    color: inherit;
 }
 
 .card:hover {
@@ -105,7 +105,49 @@ h2 {
     cursor: pointer;
 }
 
-/* Enlaces sociales */
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Status Labels */
+.status {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Status Types */
+.status.active {
+    background: rgba(0,255,170,0.15);
+    color: #00ffaa;
+    border: 1px solid #00ffaa;
+}
+
+.status.prototype {
+    background: rgba(0,150,255,0.15);
+    color: #0096ff;
+    border: 1px solid #0096ff;
+}
+
+.status.research {
+    background: rgba(255,200,0,0.15);
+    color: #ffc800;
+    border: 1px solid #ffc800;
+}
+
+.status.paused {
+    background: rgba(255,0,0,0.15);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+}
+
+/* Social */
 .social-links a {
     color: #00ffaa;
     text-decoration: none;
@@ -131,6 +173,7 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <canvas id="matrix"></canvas>
@@ -146,7 +189,7 @@ footer {
 <section id="home">
 <h1 id="mainTitle"></h1>
 <p class="subtitle">
-Independent cybersecurity developing.
+Offensive & Defensive Cyber Systems.
 </p>
 </section>
 
@@ -154,12 +197,18 @@ Independent cybersecurity developing.
 <h2>PROJECTS</h2>
 
 <a href="https://github.com/ZyntraSecurity" target="_blank" class="card">
-  <strong>Zyntra Security</strong><br>
+  <div class="card-header">
+    <strong>Zyntra Security</strong>
+    <span class="status active">ACTIVE</span>
+  </div>
   Advanced defensive infrastructure and digital threat analysis.
 </a>
 
 <a href="https://studyboost.ai" target="_blank" class="card">
-  <strong>Studyboost.ai</strong><br>
+  <div class="card-header">
+    <strong>Studyboost.ai</strong>
+    <span class="status prototype">PROTOTYPE</span>
+  </div>
   AI designed for students to summarize and study in a short amount of time.
 </a>
 
@@ -168,7 +217,7 @@ Independent cybersecurity developing.
 <section id="about">
 <h2>ABOUT</h2>
 <p>
-Zyntra Studios is the central research and development core behind multiple cybersecurity and AI-driven products.  
+Zyntra Studios is the central research and development core behind multiple cybersecurity and AI-driven products.
 Focused on innovation, resilience and offensive-defensive system design.
 </p>
 </section>
@@ -231,7 +280,7 @@ function draw() {
 
 setInterval(draw, 35);
 
-// Title reveal effect
+// Title reveal
 const titleText = "ZYNTRA STUDIOS";
 let index = 0;
 const title = document.getElementById("mainTitle");
