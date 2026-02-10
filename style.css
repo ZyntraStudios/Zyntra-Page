@@ -108,4 +108,30 @@ background:rgba(255,200,0,0.15);
 color:#ff4d4d;
 border:1px solid #ff4d4d;
 background:rgba(255,0,0,0.15);
+
+html {
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+nav a {
+    font-size: 16px;
+}
+
+.card {
+    font-size: 1rem;
+}
+
 }
