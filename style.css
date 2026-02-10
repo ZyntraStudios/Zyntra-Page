@@ -147,6 +147,25 @@ h2{
     transform:translateY(-4px);
 }
 
+.status{
+font-size:0.7rem;
+padding:4px 10px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.status.research{
+color:#ffc800;
+border:1px solid #ffc800;
+background:rgba(255,200,0,0.15);
+}
+
+.status.paused{
+color:#ff4d4d;
+border:1px solid #ff4d4d;
+background:rgba(255,0,0,0.15);
+}
+
 /* SOCIAL */
 .social-links a{
     color:#00ffaa;
@@ -179,3 +198,4 @@ footer{
         margin-top:40px;
     }
 }
+
