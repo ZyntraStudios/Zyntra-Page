@@ -116,17 +116,6 @@ h2{
     border-bottom:none;
 }
 
-.status{
-    font-weight:bold;
-}
-
-.status.research{
-    color:#ffc800;
-}
-
-.status.paused{
-    color:#ff4d4d;
-}
 
 /* CARDS */
 .card{
@@ -145,6 +134,13 @@ h2{
     border-color:#00ffaa;
     box-shadow:0 0 20px rgba(0,255,170,0.2);
     transform:translateY(-4px);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
 }
 
 .status{
@@ -198,4 +194,5 @@ footer{
         margin-top:40px;
     }
 }
+
 
